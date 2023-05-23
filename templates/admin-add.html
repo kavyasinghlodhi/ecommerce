@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    {% include "header_.html" %}
+    <form action="/admin/add" method="POST" class="form" enctype="multipart/form-data">
+        <span>Enter Product Name:</span>
+        <input type="text" placeholder="Product Name" name="name">
+        <span>Enter Product Desc:</span>
+        <input type="text" placeholder="Desc" name="desc">
+        Image: <input type="file" name="img">
+        <span>Enter Product Price:</span>
+        <input type="text" placeholder="Price" name="price">
+        <input type="text" name="file" style="display:none;">
+        <button type="submit" class="btn">SUBMIT</button>
+    </form>
+    {{result}}
+    <script>
+        window.addEventListener('click', function () {
+            document.getElementsByTagName('input')[4].value = document.getElementsByTagName('input')[2].value.slice(12)
+        })
+    </script>
+</body>
+</html>

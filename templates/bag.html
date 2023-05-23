@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bag</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    {% include "header.html" %}
+    <main>
+        <section class="table">
+            <h1>Shopping Bag</h1><br>
+            {% if items==[] %}
+                <h2>Nothing here...</h2>
+            {% else %}
+        <table>
+            <tr>
+                <th>SNO</th>
+                <th>IMAGE</th>
+                <th>NAME</th>
+                <th>PRICE</th>
+            </tr>
+            {% for item in items %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td><img src="/static/img/products/{{ item[3] }}" height="110" width="110" alt="{{ item[1] }}"></td>
+                <td>{{ item[1] }}</td>
+                <td>₹{{ item[4] }}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Total</td>
+                <td>₹{{ total }}</td>
+            </tr>
+        </table><br><br>
+        <a href="/checkout">
+            <button class="btn">CHECKOUT (₹{{total}})</button>
+        </a>
+        {%endif%}
+        </section>
+    </main>
+</body>
+</html>

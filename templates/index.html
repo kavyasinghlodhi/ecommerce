@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeenu</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    {% include "header.html" %}
+
+    <main>
+        <section class="hero">
+            <center>
+                <div class="content">
+                    <h1>Quality Denim Jeans</h1>
+                    <p>Only available on Jeenu.</p>
+                    <br><br>
+                    <a href="/products"><button class="btn">BUY NOW</button></a>
+                </div>
+            </center>
+        </section>
+        <br><br>
+        <section class="products">
+            <h2 align="center">PRODUCTS</h2>
+            <br><br>
+            <div class="product-line">
+                {% for item in items %}
+                    <div class="product">
+                            <a href="/product/{{item[1]}}">
+                            <div class="img"><img src="/static/img/products/{{item[3]}}" alt="{{item[1]}}" srcset=""></div>
+                            <div class="details">
+                                <span class="name">{{item[1][0:13]}}...</span>
+                                <span class="price">₹{{item[4]}}</span>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+        <br><br>
+    </main>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    {% include "header_.html" %}
+    <main>
+        <section class="table">
+            <h1>Products</h1><br>
+        <table>
+            <tr>
+                <th>SNO</th>
+                <th>IMAGE</th>
+                <th>NAME</th>
+                <th>PRICE</th>
+                <th>DELETE</th>
+            </tr>
+            {% for item in items %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td><img src="/static/img/products/{{ item[3] }}" height="110" width="110" alt="{{ item[1] }}"></td>
+                <td>{{ item[1] }}</td>
+                <td>₹{{ item[4] }}</td>
+                <td><a href="/delete/{{ item[0] }}"><button class="btn">DELETE</button></a></td>
+            </tr>
+            {% endfor %}
+        </table><br><br>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,222 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    background: rgb(227, 255, 227);
+}
+.nav{
+    margin: auto;
+    width: 80vw;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.nav .logo a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav{
+    background-color: black;
+    color: white;
+}
+
+.hero{
+    width: 100%;
+    background-color: rgb(170, 255, 170);
+    /* background: linear-gradient(rgb(133, 255, 133),rgb(150, 255, 150),rgb(139, 255, 139),rgb(227, 255, 227)); */
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 36px;
+}
+.btn{
+    padding: 13px;
+    border: 2px solid black;
+    background: none;
+    color: black;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+.btn:hover{
+    background: black;
+    color: white;
+}
+.hero .btn{
+    font-size: 22px;
+}
+.product-line{
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.product{
+    max-width: 200px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.product .img{
+    height: 190px;
+    width: 190px;
+    background: rgb(146, 173, 146);
+    overflow: hidden;
+}
+.product a{
+    color: black;
+    text-decoration: none;
+}
+.product .img img{
+    height: 190px;
+    width: 190px;
+}
+.product .details{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2px;
+}
+.product .name{
+    font-weight: 600;
+}
+.product .price{
+    color: rgb(55, 55, 55);
+}
+
+.product-details{
+    width: 80vw;
+    margin: 40px auto;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px 10px;
+}
+.product-details .img img{
+    height: 290px;
+    width: 290px;
+}
+.product-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.product-details .img{
+    height: 290px;
+    width: 290px;
+    overflow: hidden;
+    background: rgb(172, 255, 172);
+}
+.product-details .info{
+    padding: 13px 20px;
+    font-size: 23px;
+}
+.product-details .info h1{
+    display: flex;
+}
+.product-details .info h1 img{
+    margin-left: 10px;
+    cursor: pointer;
+}
+.red{
+    border: 2px solid red;
+    color: red;
+}
+.red:hover{
+    background-color: red;
+}
+.mt-2{
+    margin-top: 8px;
+}
+
+.table{
+    width: 80vw;
+    font-size: 20px;
+    margin: 20px auto;
+}
+table{
+    width: 80vw;
+}
+th, td{
+    border: 1px solid black;
+    padding: 7px;
+}
+.form{
+    width: 80vw;
+    margin: 20px auto;
+    font-size: 20px;
+}
+input, textarea{
+    width: 80vw;
+    padding: 7px;
+    font-size: 20px;
+}
+.form input, .form textarea, .form button{
+    margin-bottom: 11px;
+}
+nav .bag{
+    display: flex;
+    justify-content: center;
+}
+nav .bag img{
+    margin-left: 10px;
+}
+nav .links a{
+    color: white;
+    text-decoration: none;
+    padding: 0px 5px;
+    transition: 0.5s;
+}
+nav .links a:hover{
+    text-decoration: underline;
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    margin: auto;
+}
+.options button{
+    background: black;
+    color: white;
+    width: 80vw;
+}
+.nav .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav .logo a{
+    margin-left: 10px;
+}
+.nav .logo img{
+    cursor: pointer;
+}
+.hamburger{
+    display: none;
+}
+
+@media (max-width:500px) {
+    nav .links{
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        margin-top: 55px;
+        background: rgb(117, 255, 117);
+        padding: 20px 40px;
+        margin-left: -50px;
+        height: 100%;
+        display: none;
+    }
+    .nav .links a{
+        color: black;
+        padding: 13px 20px;
+    }
+    .hamburger{
+        display: block;
+    }
+}

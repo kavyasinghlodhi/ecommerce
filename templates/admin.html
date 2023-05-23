@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    {% include "header_.html" %}
+    <main>
+        <section class="table">
+            <h1>All Orders</h1><br>
+            <h2>{{comment}}</h2>
+        <table>
+            <tr>
+                <th>SNO</th>
+                <th>NAME</th>
+                <th>EMAIL</th>
+                <th>ADDRESS</th>
+                <th>PRODUCT</th>
+                <th>PRICE</th>
+                <th>ACTION</th>
+            </tr>
+            {% for item in items %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ item[6] }}</td>
+                <td>{{ item[7] }}</td>
+                <td>{{ item[8] }}</td>
+                <td>{{ item[1] }}</td>
+                <td>₹{{ item[4] }}</td>
+                <td>
+                    {% if item[5]=="no" %}
+                        <a href="/markasdelivered/{{item[0]}}"><button>Mark as delivered</button></a>
+                    {% else %}
+                        <a href="/markasundelivered/{{item[0]}}"><button>Mark as undelivered</button></a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Total</td>
+                <td>₹{{ total }}</td>
+            </tr>
+        </table><br><br>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{name}}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    {% include "header.html" %}
+    <main>
+        {% if comment!="" %}
+            <div style='width:80vw;font-size:20px;background:rgb(178, 255, 178);margin: 20px auto;display: flex;flex-direction: column;text-align: center;justify-content: center;cursor: pointer;' onclick="this.style.display = 'none'"><p style="padding:20px;">{{comment}}</p></div>
+        {% else %}      
+            <div></div>
+        {% endif %}
+        <section class="">
+            <div class="product-details product-flex">
+                <div class="img"><img src="/static/img/products/{{items[3]}}" alt="{{items[1]}}" srcset=""></div>
+                <div class="info">
+                    {% if found_wish=="True" %}
+                        <h1>{{items[1]}} <a href="/wishlist/remove/{{items[1]}}"><img src="https://img.icons8.com/emoji/48/null/red-heart.png"/></a></h1>
+                    {% elif found_wish=="login" %}
+                        <h1>{{items[1]}} <a href="/login"><img src="https://img.icons8.com/ios/50/null/hearts--v1.png"></a></h1>
+                    {% else %}
+                        <h1>{{items[1]}} <a href="/wishlist/add/{{items[1]}}"><img src="https://img.icons8.com/ios/50/null/hearts--v1.png"></a></h1>
+                    {% endif %}
+                    <p>₹{{items[4]}}</p><br>
+                    <form action="" method="post">
+                        <button class="btn red">ADD TO BAG</button><br>
+                        <button class="btn mt-2 red">BUY NOW</button>
+                    </form>
+                </div>
+            </div>
+            <div class="product-details mt-2">
+                <h3>Description</h2>
+                <p>
+                    {{items[2]}}
+                </p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
